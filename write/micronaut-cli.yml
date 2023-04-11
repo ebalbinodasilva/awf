@@ -1,0 +1,6 @@
+applicationType: messaging
+defaultPackage: com.awf
+testFramework: junit
+sourceLanguage: java
+buildTool: gradle
+features: [app-name, gradle, jackson-databind, java, java-application, junit, kafka, kafka-streams, logback, micronaut-build, microstream, microstream-rest, readme, shade, test-resources, yaml]

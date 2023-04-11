@@ -2,30 +2,27 @@ package com.awf.integration.ai.aiworking.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
-import com.awf.integration.ai.aiworking.dto.ChatRequest;
-import com.awf.integration.ai.aiworking.service.ChatbotService;
-
-import jakarta.validation.Valid;
-import reactor.core.publisher.Mono;
+import com.awf.integration.ai.aiworking.service.ChatBotService;
 
 @RestController
+@RequestMapping("/api/chat")
 public class ChatbotController {
-  private final ChatbotService chatbotService;
+  private final ChatBotService chatbotService;
 
-  public ChatbotController(ChatbotService chatbotService) {
-      this.chatbotService = chatbotService;
-  }
+    public ChatbotController(ChatBotService chatbotService) {
+        this.chatbotService = chatbotService;
+    }
 
-  @PostMapping("/chat")
-  public Mono<String> chat(@Valid @RequestBody ChatRequest request) {
-      return chatbotService.generateResponse(request.getPrompt());
-  }
-
+    @PostMapping
+    public ResponseEntity<String> sendMessage(@RequestBody String message) {
+        String response = chatbotService.sendMessage(message);
+        return ResponseEntity.ok(response);
+    }
 }

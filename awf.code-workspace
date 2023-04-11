@@ -1,7 +1,12 @@
 {
 	"folders": [
 		{
+			"name": "awf",
 			"path": "."
+		},
+		{
+			"name": "write",
+			"path": "quarkus-ai-working-read/src/main/java/org/awf/write"
 		}
 	],
 	"settings": {
