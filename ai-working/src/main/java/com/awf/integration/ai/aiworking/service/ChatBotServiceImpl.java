@@ -1,5 +1,6 @@
 package com.awf.integration.ai.aiworking.service;
 
+import com.awf.integration.ai.aiworking.dto.ChatResponse;
 import org.springframework.http.MediaType;
 import org.springframework.web.reactive.function.client.WebClient;
 

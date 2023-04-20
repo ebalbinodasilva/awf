@@ -1,8 +1,10 @@
 package com.awf.integration.ai.aiworking.dto;
 import lombok.Data;
+import lombok.Setter;
 
 @Data
+@Setter
 public class ChatRequest {
-    @NotBlank
+
     private String prompt;
 }
