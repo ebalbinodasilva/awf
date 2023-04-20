@@ -28,7 +28,7 @@ public class ChatBotServiceImpl implements ChatBotService {
                 .bodyToMono(ChatResponse.class)
                 .block();
 
-        return response.getChoices().get(0).getText();
+        return response.getChoices().stream().findFirst().get().getText();
     }
 }
     
